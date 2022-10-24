@@ -137,29 +137,21 @@ Polymer({
 
   properties: {
     localize: Function,
-    language: String,
-    platform: String,
+    showAltAccessMessage: Boolean,
     servers: Array,
     shouldShowZeroState: {
       type: Boolean,
       computed: '_computeShouldShowZeroState(servers)',
     },
-    showAltAccessMessage: {
-      type: Boolean,
-      computed: '_computeShowAltAccessMessage()',
-    },
   },
 
   _computeShouldShowZeroState(servers: ServerListItem[]) {
+    console.log("alt access in index servers_view: " + this.showAltAccessMessage)
     return servers ? servers.length === 0 : false;
   },
 
   _requestPromptAddServer() {
+    console.log("alt access in index servers_view 2: " + this.showAltAccessMessage)
     this.fire('PromptAddServerRequested', {});
-  },
-
-  _computeShowAltAccessMessage() {
-    // Hack to show an alternative message
-    return this.language === 'fa' && this.platform !== 'ios';
   },
 });
