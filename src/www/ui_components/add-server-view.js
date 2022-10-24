@@ -163,16 +163,18 @@ Polymer({
         <iron-icon icon="communication:vpn-key" slot="suffix"></iron-icon>
       </paper-input>
       <div class="footer center top-divider">
-        <div
-          id="addServerFooter"
-          hidden$="[[showAltAccessMessage]]"
-          inner-h-t-m-l="[[localize('server-create-your-own', 'breakLine', '<br/>', 'openLink', '<a href=https://s3.amazonaws.com/outline-vpn/index.html>', 'closeLink', '</a>')]]"
-        ></div>
-        <div
-          id="addServerFooterAlt"
-          hidden$="[[!showAltAccessMessage]]"
-          inner-h-t-m-l="[[localize('server-create-your-own-access', 'breakLine', '<br/>', 'openLink', '<a href=https://s3.amazonaws.com/outline-vpn/index.html>', 'openLink2', '<a href=https://www.reddit.com/r/outlinevpn/wiki/index/outline_vpn_access_keys/>', 'closeLink', '</a>')]]"
-        ></div>
+        <template is="dom-if" if="[[showAltAccessMessage]]">
+          <div
+            id="addServerFooter"
+            inner-h-t-m-l="[[localize('server-create-your-own', 'breakLine', '<br/>', 'openLink', '<a href=https://s3.amazonaws.com/outline-vpn/index.html>', 'closeLink', '</a>')]]"
+          ></div>
+        </template>
+        <template is="dom-if" if="[[!showAltAccessMessage]]">
+          <div
+            id="addServerFooterAlt"
+            inner-h-t-m-l="[[localize('server-create-your-own-access', 'breakLine', '<br/>', 'openLink', '<a href=https://s3.amazonaws.com/outline-vpn/index.html>', 'openLink2', '<a href=https://www.reddit.com/r/outlinevpn/wiki/index/outline_vpn_access_keys/>', 'closeLink', '</a>')]]"
+          ></div>
+        </template>
         <div
           id="invalidAccessKeyFooter"
           hidden=""
@@ -207,15 +209,10 @@ Polymer({
 
   properties: {
     localize: Function,
-    language: String,
-    platform: String,
+    showAltAccessMessage: Boolean,
     accessKey: {
       type: String,
       observer: '_accessKeyChanged',
-    },
-    showAltAccessMessage: {
-      type: Boolean,
-      computed: '_computeShowAltAccessMessage()',
     },
   },
 
@@ -322,10 +319,5 @@ Polymer({
 
   _disallowScroll: function(event) {
     event.preventDefault();
-  },
-
-  _computeShowAltAccessMessage() {
-    // Hack to show an alternative message
-    return this.language === 'fa' && this.platform !== 'ios' && this.platform !== 'osx';
   },
 });
