@@ -46,14 +46,12 @@ function escapeXmlCharacters(str) {
     .replace(/&/g, '\\&');
 }
 
-/*
-  Inputs:
-  => cliParameters: the list of action arguments passed in
-
-  Outputs:
-  => an object containing the specificed platform and buildMode.
-*/
-function getBuildParameters(cliArguments) {
+/**
+ * Verifies and returns the specified platform.
+ * @param {string[]} parameters The list of action arguments passed in
+ * @returns {Object} Object containing the specificed platform.
+ */
+function getActionParameters(cliArguments) {
   console.log(minimist(cliArguments));
   const {
     _: [platform = ''],
@@ -146,8 +144,12 @@ async function importIosMessages() {
   }
 }
 
+/**
+ * Imports message translations for the specified Cordova project.
+ * @param {string[]} parameters The list of action arguments passed in.
+ */
 async function main(...parameters) {
-  const {platform} = getBuildParameters(parameters);
+  const {platform} = getActionParameters(parameters);
   console.group(chalk.white(`▶ importing ${platform} messages:`));
 
   switch (platform) {
