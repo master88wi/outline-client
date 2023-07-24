@@ -41,6 +41,7 @@
 		A2B8C14D2A58B70E0054487E /* AppKitBridge.bundle in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = A2DBB2F62A00D2DD0017E696 /* AppKitBridge.bundle */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2B8C1532A58B8A50054487E /* AppKitBridgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBB2FF2A00D3900017E696 /* AppKitBridgeProtocol.swift */; };
 		A2B8C1542A58B8B30054487E /* AppKitBundleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBB2FC2A00D36E0017E696 /* AppKitBundleLoader.swift */; };
+		A2C907E22A6A155500901422 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = A2C907E42A6A155500901422 /* Localizable.strings */; };
 		A2DBB2FB2A00D2F90017E696 /* AppKitBridge.bundle in Embed App Extensions (2 items) */ = {isa = PBXBuildFile; fileRef = A2DBB2F62A00D2DD0017E696 /* AppKitBridge.bundle */; platformFilter = maccatalyst; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A2DBB2FD2A00D36E0017E696 /* AppKitBundleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBB2FC2A00D36E0017E696 /* AppKitBundleLoader.swift */; };
 		A2DBB3002A00D3900017E696 /* AppKitBridgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2DBB2FF2A00D3900017E696 /* AppKitBridgeProtocol.swift */; };
@@ -195,6 +196,8 @@
 		A2727B662A6ECCFF00804594 /* AppDelegate+Outline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+Outline.h"; sourceTree = "<group>"; };
 		A2727B672A6ECD3B00804594 /* AppDelegate+Outline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+Outline.m"; sourceTree = "<group>"; };
 		A28B19A02A05C08200528BB3 /* OutlineStatusItemController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlineStatusItemController.swift; sourceTree = "<group>"; };
+		A2C907E32A6A155500901422 /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		A2C907E52A6A155A00901422 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		A2DBB2F62A00D2DD0017E696 /* AppKitBridge.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppKitBridge.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2DBB2FC2A00D36E0017E696 /* AppKitBundleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppKitBundleLoader.swift; sourceTree = "<group>"; };
 		A2DBB2FE2A00D38F0017E696 /* AppKitBridge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppKitBridge-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -320,6 +323,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A2C907E42A6A155500901422 /* Localizable.strings */,
 				FC55AB411F4F960A0056F12C /* VpnExtension-Info.plist */,
 				0207DA571B56EA530066E2B4 /* Assets.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
@@ -561,6 +565,7 @@
 				English,
 				en,
 				Base,
+				nl,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			packageReferences = (
@@ -607,6 +612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
+				A2C907E22A6A155500901422 /* Localizable.strings in Resources */,
 				0207DA581B56EA530066E2B4 /* Assets.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
 			);
@@ -724,6 +730,18 @@
 			targetProxy = A2F6068D2A1C6D4A0039183A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A2C907E42A6A155500901422 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A2C907E32A6A155500901422 /* nl */,
+				A2C907E52A6A155A00901422 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
